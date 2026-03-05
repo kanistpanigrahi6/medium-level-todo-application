@@ -12,10 +12,17 @@
     function callbackfn(res){
         res.json().then(parsedata)
     }
-    function onPress(){
+   function onPress(){
         // alert("hii harshitttt");
         fetch("http://localhost:3000/todos",{
-            method:"GET"
+            method:"POST",
+            body:JSON.stringify({
+                title:"gym",
+                description:"went to gym"
+            }),
+            headers:{
+                "Content-Type":"application/json"
+            }
         }).then(callbackfn)
     }
 </script>
